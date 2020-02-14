@@ -7,3 +7,9 @@ describe('Root endpoint', () => {
   });
 
 });
+
+describe('user endpoint', ()=>{
+  it('should give me username',()=>{
+    cy.request('/user').its('body').should('eq', JSON.stringify({name: 'Pascal', age: 18}));
+  })
+})
